@@ -112,6 +112,10 @@ class SurveyController extends Controller
         $user_id = $request->input('user_id');
         $survey_id = $request->input('survey_id');
 
+        $this->validate($request, [
+            'question' => 'required|min:5'
+        ]);
+
         $last_insert_id = DB::table('survey_results')->insertGetId([
             'survey_id' =>  $survey_id,
             'user_id' => $user_id]

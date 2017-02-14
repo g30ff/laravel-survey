@@ -19,6 +19,12 @@ class Survey extends Model
         return $this->hasManyThrough('App\Answer', 'App\Question');
     }
 
+    /**
+     * Query database to retrieve the specific survey info with curated questions and answers.
+     *
+     * @param $id
+     * @return mixed
+     */
     protected function getSurveyFromDB($id)
     {
         $results = DB::select(
@@ -32,6 +38,13 @@ class Survey extends Model
         return $results;
 
     }
+
+    /**
+     * Get specific survey represented by id form database, prep it for use in blade template form.
+     *
+     * @param $id
+     * @return mixed
+     */
     public function getSurvey($id)
     {
         $results = $this->getSurveyFromDB($id);
@@ -42,7 +55,6 @@ class Survey extends Model
             $survey["survey_name"] = $result->survey_name;
             $survey["questions"][$result->question_id] = $result->question;
             $survey["answers"][$result->question_id][$result->answer_id] = $result->answer;
-
         }
 
         return $survey;

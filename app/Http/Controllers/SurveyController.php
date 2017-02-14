@@ -22,6 +22,15 @@ use App\Question;
 
 class SurveyController extends Controller
 {
+    /**
+     * Show a list of surveys that have been curated: ( questions have been selected with their associated answers).
+     * Options available on this page are:
+     *   - edit a survey to add or remove questions
+     *   - delete a survey
+     *   - create a new survey
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getAdminIndex()
     {
         $surveys = Survey::orderBy('survey', 'asc')->get();
@@ -30,6 +39,12 @@ class SurveyController extends Controller
         return view('admin.surveys.index', ['surveys' => $surveys, 'questions' => $questions]);
     }
 
+    /**
+     * Create survey form with field to name survey as well as ability to select curated questions that
+     * will appear on the survey.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getAdminCreate()
     {
         $questions = Question::all();
@@ -37,6 +52,12 @@ class SurveyController extends Controller
         return view('admin.surveys.create', ['questions' => $questions, 'userID' => $user->id]);
     }
 
+    /**
+     * Creates the survey in the database.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function surveyAdminCreate(Request $request)
     {
         $this->validate($request, [
@@ -53,6 +74,15 @@ class SurveyController extends Controller
         return redirect()->route('admin.surveys.index')->with('info', 'Survey created, Title is:' . $request->input('survey'));
     }
 
+    /**
+     * Generates page for editing the survey matching the id param.
+     * Options available on this page are:
+     *   - rename the survey
+     *   - add or remove curated questions
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getAdminEdit($id)
     {
         $survey = Survey::find($id);
@@ -61,6 +91,12 @@ class SurveyController extends Controller
         return view('admin.surveys.edit', ['survey' => $survey, 'surveyId' => $id, 'questions' => $questions]);
     }
 
+    /**
+     * Save the updated survey to the database and then redirects to the survey admin page.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function surveyAdminUpdate(Request $request)
     {
         $this->validate($request, [
@@ -76,6 +112,12 @@ class SurveyController extends Controller
         return redirect()->route('admin.surveys.index')->with('info', 'Survey updated, Survey is: ' . $request->input('survey'));
     }
 
+    /**
+     * Deletes the survey from the database, as well as it's associations to curated questions.
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function surveyAdminDelete($id)
     {
         $survey = Survey::find($id);
@@ -85,16 +127,26 @@ class SurveyController extends Controller
         return redirect()->route('admin.surveys.index')->with('info', 'Survey deleted:');
     }
 
+    /**
+     * Landing page for logged in users to see and select survey to take.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getIndex()
     {
         $surveys = Survey::orderBy('survey', 'asc')->get();
         $questions = Question::orderBy('created_at', 'asc')->get();
 
         return view('survey.index', ['surveys' => $surveys, 'questions' => $questions]);
-
-
     }
 
+    /**
+     * Generates page rendering form containing survey matching id param.  Once survey is complete, user can submit
+     * results.
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function takeSurvey($id)
     {
 
@@ -107,6 +159,12 @@ class SurveyController extends Controller
         return view('survey.take', ['surveys' => $surveys, 'survey_name' => $survey_name, 'survey_id' => $survey_id, 'userID' => $user_id]);
     }
 
+    /**
+     * Inserts result from survey taken into database.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function surveyCreate(Request $request)
     {
         $user_id = $request->input('user_id');
@@ -116,11 +174,20 @@ class SurveyController extends Controller
             'question' => 'required|min:5'
         ]);
 
+        /* *
+         * insert survey id and user id into surve_results table and
+         * retrieve insert id for use to insert details into the
+         * survey results detail page.
+         */
         $last_insert_id = DB::table('survey_results')->insertGetId([
             'survey_id' =>  $survey_id,
             'user_id' => $user_id]
         );
 
+        /**
+         * retrieve the radio type questions from request object and prep info for
+         * insertion into survey_results_detail table.
+         */
         $questions = $request->input('question');
         foreach ($questions as $key => $value)
         {
@@ -133,7 +200,10 @@ class SurveyController extends Controller
 
      }
 
-     public function surveyResults()
+    /**
+     * To be completed.
+     */
+    public function surveyResults()
      {
          echo "here";
      }

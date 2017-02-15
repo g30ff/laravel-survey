@@ -171,7 +171,7 @@ class SurveyController extends Controller
         $survey_id = $request->input('survey_id');
 
         $this->validate($request, [
-            'question' => 'required|min:5'
+            'question' => 'required'
         ]);
 
         /* *
@@ -194,18 +194,25 @@ class SurveyController extends Controller
             DB::insert('insert into survey_results_detail(survey_results_id, question_id,answer_id) values (?,?,?)', [$last_insert_id,$key, $value]);
         }
 
-
-
-        return redirect()->route('survey.index')->with('info', 'Survey taken, Thank you:');
-
+        return redirect()->route('survey.results',array($survey_id))->with('info', 'Survey taken, reusults shown below. Thank you:');
      }
 
     /**
-     * To be completed.
+     * After user takes survey, they are redirected to results page which shows the survey they just took with answers.
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function surveyResults()
+    public function surveyResults($id)
      {
-         echo "here";
+         $user_id = Auth::user()->id;
+         $survey = new Survey();
+         $surveys[] = $survey->getSurvey($id);
+         $survey_name = $surveys[0]["survey_name"];
+         $survey_id = $surveys[0]["id"];
+         $survey_results = $survey->getResults($id, $user_id);
+
+         return view('survey.output', ['surveys' => $surveys, 'survey_name' => $survey_name, 'survey_results' => $survey_results, 'survey_id' => $survey_id, 'userID' => $user_id]);
+
      }
 
 }

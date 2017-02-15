@@ -59,4 +59,31 @@ class Survey extends Model
 
         return $survey;
     }
+
+    /**
+     * Get questions and answers of survey taken by user with user_id.  These results are then
+     * used to display survey details.
+     *
+     * @param $id
+     * @param $user_id
+     * @return array
+     */
+    public function getResults($id, $user_id)
+    {
+        $survey_results = DB::select(
+            "SELECT srd.question_id, srd.answer_id FROM surveys as s
+             join survey_results as sr on s.id = sr.survey_id 
+             join survey_results_detail as srd on sr.id = srd.survey_results_id 
+             WHERE s.id = ?
+             and s.user_id = ?", [$id, $user_id]);
+
+        $results = [];
+
+        foreach($survey_results as $result)
+        {
+            $results[] = get_object_vars($result);
+        }
+
+        return $results;
+    }
 }

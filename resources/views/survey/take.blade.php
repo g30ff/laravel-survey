@@ -19,7 +19,7 @@
                             @foreach($surveys[$i]['answers'][$question_key] as $answer_key =>$answer_value)
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="question[{{ $question_key }}]" value="{{ $answer_key }}">{{ $answer_value }}
+                                        <input type="radio" name="question[{{ $question_key }}]" value="{{ $answer_key }}" required>{{ $answer_value }}
                                     </label>
                                 </div>
 

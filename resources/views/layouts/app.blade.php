@@ -44,10 +44,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @if(Auth::user())
-
-                         <li><a href="{{ route('admin.surveys.index') }}">Surveys</a></li>
-                        &nbsp;<li><a href="{{ route('admin.questions.index') }}">Questions</a></li>
-                         <li><a href="{{ route('admin.answers.index') }}">Answers</a></li>
+                         <li><a href="{{ route('survey.index') }}">Surveys Landing Page</a></li>
+                         <li><a href="{{ route('admin.surveys.index') }}">Administer Surveys</a></li>
+                        &nbsp;<li><a href="{{ route('admin.questions.index') }}">Administer Questions</a></li>
+                         <li><a href="{{ route('admin.answers.index') }}">Administer Answers</a></li>
                         @endif
 
                     </ul>

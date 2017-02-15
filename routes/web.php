@@ -36,9 +36,9 @@ Route::get('/survey/{id}',
         'as' => 'survey.create'
     ])->middleware('auth');
 
-    Route::get('survey/output', [
-        'uses' => 'SurveyController@getIndex',
-        'as' => 'survey.output'
+    Route::get('survey/results/{id}', [
+        'uses' => 'SurveyController@surveyResults',
+        'as' => 'survey.results'
     ])->middleware('auth');
 /*
  * end surveys non admin routes

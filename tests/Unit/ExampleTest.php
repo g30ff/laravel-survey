@@ -9,6 +9,7 @@ use App\User;
 use App\Question;
 use App\Answer;
 use App\Survey;
+
 class ExampleTest extends TestCase
 {
     /**

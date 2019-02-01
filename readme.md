@@ -32,3 +32,27 @@ The Survey Application allows for surveys to be created and taken by users.  The
 * http://homestead.test/admin/answers  -  Answers administration area.
 
 
+# Screenshots
+## Welcome Screen
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/welcome.png|alt=WelcomeScreen]]
+
+## Login Screen
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/login.png|alt=LoginScreen]]
+
+## Logged In Welcome Screen
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/logged_in_welcome.png|alt=LoggedInWelcomeScreen]]
+
+## Survey Selection Screen
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/select_survey.png|alt=SurveySelectionScreen]]
+
+## Survey Being Taken
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/survey_taken.png|alt=SurveyBeingTaken]]
+
+## Question Management Screen
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/question_management.png|alt=QuestionManagementScreen]]
+
+## Answers Management Screen
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/answers_management.png|alt=AnswersManagementScreen]]
+
+## Survey Response Page
+[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/survey_output.png|alt=SurveyResponsePage]]

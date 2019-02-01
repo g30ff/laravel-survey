@@ -25,11 +25,11 @@ The Survey Application allows for surveys to be created and taken by users.  The
 
 ## Links
 
-* http://homestead.test/  -  Homepage.
-* http://homestead.test/survey  -  Survey selection homepage.
-* http://homestead.test/admin/surveys  -  Survey administration area.
-* http://homestead.test/admin/questions  -  Questions administration area.
-* http://homestead.test/admin/answers  -  Answers administration area.
+* homestead.test/  -  Homepage.
+* homestead.test/survey  -  Survey selection homepage.
+* homestead.test/admin/surveys  -  Survey administration area.
+* homestead.test/admin/questions  -  Questions administration area.
+* homestead.test/admin/answers  -  Answers administration area.
 
 
 # Screenshots

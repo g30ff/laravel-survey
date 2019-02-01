@@ -34,25 +34,23 @@ The Survey Application allows for surveys to be created and taken by users.  The
 
 # Screenshots
 ## Welcome Screen
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/welcome.png|alt=WelcomeScreen]]
-
+![WelcomeScreen](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/welcome.png)
 ## Login Screen
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/login.png|alt=LoginScreen]]
+![LoginScreen](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/login.png)
 
 ## Logged In Welcome Screen
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/logged_in_welcome.png|alt=LoggedInWelcomeScreen]]
+![LoggedInWelcomeScreenage](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/logged_in_welcome.png)
 
 ## Survey Selection Screen
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/select_survey.png|alt=SurveySelectionScreen]]
+![SurveySelectionScreen](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/select_survey.png)
 
 ## Survey Being Taken
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/survey_taken.png|alt=SurveyBeingTaken]]
+![SurveyBeingTaken](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/survey_taken.png)
 
 ## Question Management Screen
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/question_management.png|alt=QuestionManagementScreen]]
+![QuestionManagementScreen](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/question_management.png)
 
 ## Answers Management Screen
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/answers_management.png|alt=AnswersManagementScreen]]
-
+![AnswersManagementScreen](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/answers_management.png)
 ## Survey Response Page
-[[https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/survey_output.png|alt=SurveyResponsePage]]
+![SurveyResponsePage](https://github.com/g30ff/laravel-survey/blob/master/readme%20pics/survey_output.png)

@@ -75,7 +75,7 @@ class Survey extends Model
              join survey_results as sr on s.id = sr.survey_id 
              join survey_results_detail as srd on sr.id = srd.survey_results_id 
              WHERE s.id = ?
-             and s.user_id = ?", [$id, $user_id]);
+             and sr.user_id = ?", [$id, $user_id]);
 
         $results = [];
 
@@ -83,7 +83,6 @@ class Survey extends Model
         {
             $results[] = get_object_vars($result);
         }
-
         return $results;
     }
 }

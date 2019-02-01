@@ -243,7 +243,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'G H', 'gharnett@gmail.com', '$2y$10$iCSovgkYS0Q9yIDnqQnFdOPUvYdxRoEEqUsDwqnFmAa1iA7/tjv/i', 'QzLZnCl9P0a6UxbrHrj70a9snlIgyu69K8AbITfaV8AFUWBZl29kuefUyDJh', '2017-02-07 09:20:05', '2017-02-07 09:20:05'),
+(1, 'A B', 'user@gmail.com', '$2y$10$iCSovgkYS0Q9yIDnqQnFdOPUvYdxRoEEqUsDwqnFmAa1iA7/tjv/i', 'QzLZnCl9P0a6UxbrHrj70a9snlIgyu69K8AbITfaV8AFUWBZl29kuefUyDJh', '2017-02-07 09:20:05', '2017-02-07 09:20:05'),
 (27, 'Dr. Ola Murazik DVM', 'dkunze@example.com', '$2y$10$JvvrGmwjY5xuaOxEPo6NxOFYkHxD84d6N/uRX4LHUA11q53ZuMN..', '6QOlO7pAPW', '2017-02-14 16:25:54', '2017-02-14 16:25:54');
 
 --

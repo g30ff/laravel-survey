@@ -1,42 +1,34 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+Survey App
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+The Survey Application allows for surveys to be created and taken by users.  The survey can have an arbitrary amount of questions, each of which can have an arbitrary amount of answers.  The surveys are in multiple choice format, where only one of the available answers can be selected. It has user registration and login for access control.  It is built using Laravel 5.4, using Vagrant, Homestead, PHP 7.1 and Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-51-generic x86_64).
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Existing Functionality
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The application is not completed yet.  Currently the functionality exists to:
+Register new users
+Log In to the portal
+Restrict access to pages when user is not authorized.
+Add, edit, delete questions
+Add, edit, delete answers.
+Associate or disassociate existing answers to questions.
+Add, edit, delete surveys.
+Associate or disassociate questions to a survey. 
+Capture user info, and survey responses to database.
+Display user responses to surveys taken.
+Unit tests.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+Needs Completing
 
-## Learning Laravel
+Additional unit tests.
+Code refactoring where needed.
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+Links
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+http://homestead.test/  -  Homepage.
+http://homestead.test/survey  -  Survey selection homepage.
+http://homestead.test/admin/surveys  -  Survey administration area.
+http://homestead.test/admin/questions  -  Questions administration area.
+http://homestead.test/admin/answers  -  Answers administration area.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
-# laravel-survey
-# laravel-survey
